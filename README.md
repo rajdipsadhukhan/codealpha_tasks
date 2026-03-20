@@ -15,3 +15,9 @@ This repository contains all projects completed during CodeAlpha Internship.
 ### 🧮 Calculator
 👉 [Live Demo](https://calculatorbyraj.netlify.app/)  
 👉 [Source Code](./CodeAlpha_Calculator)
+
+---
+
+### 💼 Portfolio
+👉 [Live Demo](https://rajdip-portfolio-up.netlify.app/)  
+👉 [Source Code](./CodeAlpha_Portfolio)
