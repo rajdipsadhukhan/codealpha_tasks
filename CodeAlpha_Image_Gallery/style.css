@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1a1a2e, #0f0f1a);
+  color: #eaeaea;
+  padding: 30px;
+}
+
+/* Title */
+h1 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(18px);
+  border-radius: 18px;
+  padding: 15px;
+
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #6a5acd, #836fff);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(106,90,205,0.4);
+}
+
+/* Filter */
+.filter-bar {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.filter-btn {
+  margin: 6px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.active {
+  background: linear-gradient(135deg, #836fff, #6a5acd);
+  color: white;
+  border: none;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Card */
+.card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+/* Image */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.85);
+}
+
+/* Remove Button */
+.remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255,0,0,0.8);
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 85%;
+  max-height: 80%;
+  border-radius: 12px;
+}
+
+/* Arrows */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 1.8rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.prev { left: 40px; }
+.next { right: 40px; }
+
+/* File Upload */
+#category {
+  color: #836fff;
+}
+
+.file-upload {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.file-upload input {
+  display: none;
+}
+
+.file-upload span {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6a5acd, #836fff);
+  color: white;
+  font-size: 14px;
+  transition: 0.3s ease;
+
+  box-shadow: 0 4px 15px rgba(106, 90, 205, 0.3);
+}
+
+.file-upload span:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(106, 90, 205, 0.5);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input,
+  select,
+  button {
+    width: 100%;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: 160px;
+  }
+
+  /* 🔥 FIXED LIGHTBOX FOR MOBILE */
+  .lightbox img {
+    max-width: 90%;
+    max-height: 70%;
+  }
+
+  .nav-btn {
+    top: auto;
+    bottom: 20px;
+    transform: none;
+    font-size: 1.4rem;
+    padding: 10px;
+  }
+
+  .prev {
+    left: 25%;
+  }
+
+  .next {
+    right: 25%;
+  }
+}
