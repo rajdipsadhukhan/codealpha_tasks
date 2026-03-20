@@ -20,7 +20,7 @@ HTML, CSS, JavaScript
 ---
 
 ## 🚀 Live Demo
-👉 [View Project](https://your-netlify-link.netlify.app)
+👉 [View Project](https://calculatorbyraj.netlify.app/)
 
 ---
 
