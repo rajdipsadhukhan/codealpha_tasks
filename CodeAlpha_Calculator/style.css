@@ -1,0 +1,83 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+}
+
+/* Calculator Container */
+.calculator{
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.05);
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Display */
+.calculator input{
+    width:100%;
+    height:70px;
+    border:none;
+    outline:none;
+    text-align:right;
+    font-size:28px;
+    padding:15px;
+    margin-bottom:20px;
+    border-radius:12px;
+    background: rgba(255,255,255,0.1);
+    color:white;
+}
+
+/* Button grid */
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(4,85px);
+    gap:12px;
+}
+
+/* Buttons */
+button{
+    height:60px;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.2s;
+    background: rgba(255,255,255,0.08);
+    color:white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Hover effect */
+button:hover{
+    transform:translateY(-3px);
+    background: rgba(255,255,255,0.15);
+}
+
+/* Operator buttons */
+.operator{
+    background:linear-gradient(135deg,#ff9966,#ff5e62);
+}
+
+/* Equal button */
+.equal{
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+}
+
+/* Special buttons */
+.special{
+    background:linear-gradient(135deg,#f7971e,#ffd200);
+    color:black;
+}
