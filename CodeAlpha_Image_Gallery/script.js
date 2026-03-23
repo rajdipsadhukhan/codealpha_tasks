@@ -3,9 +3,9 @@ let currentIndex = 0;
 let currentFilter = 'all';
 let visibleImages = [];
 
-/* =========================
-   LOAD FROM LOCAL STORAGE
-========================= */
+
+   // LOAD FROM LOCAL STORAGE
+
 window.addEventListener("load", () => {
   const savedImages = localStorage.getItem("galleryImages");
 
@@ -15,16 +15,16 @@ window.addEventListener("load", () => {
   }
 });
 
-/* =========================
-   SAVE TO LOCAL STORAGE
-========================= */
+
+   // SAVE TO LOCAL STORAGE
+
 function saveImages() {
   localStorage.setItem("galleryImages", JSON.stringify(images));
 }
 
-/* =========================
-   RESIZE IMAGE (IMPORTANT)
-========================= */
+
+   // RESIZE IMAGE (IMPORTANT)
+
 function resizeImage(file, callback) {
   const img = new Image();
   const reader = new FileReader();
@@ -51,9 +51,9 @@ function resizeImage(file, callback) {
   reader.readAsDataURL(file);
 }
 
-/* =========================
-   ADD IMAGE
-========================= */
+
+   // ADD IMAGE
+
 function addImage() {
   const fileInput = document.getElementById('fileInput');
   const category = document.getElementById('category').value;
@@ -76,9 +76,9 @@ function addImage() {
   });
 }
 
-/* =========================
-   RENDER IMAGES
-========================= */
+
+   // RENDER IMAGES
+
 function renderImages(filter = 'all') {
   currentFilter = filter;
   const gallery = document.getElementById('gallery');
@@ -114,9 +114,9 @@ function renderImages(filter = 'all') {
   });
 }
 
-/* =========================
-   FILTER
-========================= */
+
+   // FILTER
+
 function filterImages(event, category) {
   document.querySelectorAll('.filter-btn')
     .forEach(btn => btn.classList.remove('active'));
@@ -125,9 +125,9 @@ function filterImages(event, category) {
   renderImages(category);
 }
 
-/* =========================
-   LIGHTBOX
-========================= */
+
+   // LIGHTBOX
+
 function openLightbox(index) {
   currentIndex = index;
   document.getElementById('lightbox').style.display = 'flex';
@@ -151,9 +151,9 @@ function prevImage(e) {
   updateLightbox();
 }
 
-/* =========================
-   CLOSE LIGHTBOX
-========================= */
+
+   // CLOSE LIGHTBOX
+
 document.getElementById('lightbox').onclick = function () {
   this.style.display = 'none';
 };
