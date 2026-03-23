@@ -256,7 +256,7 @@ button:hover {
     height: 160px;
   }
 
-  /* 🔥 FIXED LIGHTBOX FOR MOBILE */
+  /*LIGHTBOX FOR MOBILE */
   .lightbox img {
     max-width: 90%;
     max-height: 70%;
